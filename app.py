@@ -55,10 +55,10 @@ def clearSpeech():
 
 
 with gr.Blocks(css="style.css", title="文本转语音") as demo:
-    gr.Markdown("""
-    # 微软Edge文本转语音
-    调用edge-tts 进行转换
-    """)
+    # gr.Markdown("""
+    # # 微软Edge文本转语音
+    # 调用edge-tts 进行转换
+    # """)
     with gr.Row():
         with gr.Column():
             text = gr.TextArea(label="文本", elem_classes="text-area")
@@ -76,7 +76,7 @@ with gr.Blocks(css="style.css", title="文本转语音") as demo:
             
             example = gr.Audio(label="试听",
                               value="example/zh-CN-XiaoxiaoNeural.wav",
-                              interactive=False,
+                              interactive=True,
                               elem_classes="example")
 
             voices.change(fn=changeVoice,inputs=voices,outputs=example)
